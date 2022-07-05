@@ -1,21 +1,21 @@
 #include <iostream>
 using namespace std;
 
-void swap(int &a, int&b){
-    int C;
-    C = a;
-    a = b;
-    b = C;
+void swap(int &x, int&y){
+    int z;
+    z = x;
+    x = y;
+    y = z;
     return; 
 }
 int main(){
-    int a,b;
-    cin>>a>>b;
-    cout <<"Before swap, value of a : "<<a<<endl;
-    cout <<"Before swap, value of b : "<<b<<endl;
+    int x,y;
+    cin>>x>>y;
+    cout <<"Before swap, x : "<<x<<endl;
+    cout <<"Before swap, y : "<<y<<endl;
 
-    swap(a,b);
+    swap(x,y);
 
-    cout <<"After swap, value of a : "<<a<<endl;
-    cout <<"After swap, value of b : "<<b<<endl;
+    cout <<"After swap,  x : "<<x<<endl;
+    cout <<"After swap,  y : "<<y<<endl;
 }
