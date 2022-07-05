@@ -2,10 +2,10 @@
 using namespace std;
 
 void swap(int &a, int&b){
-    int temp;
-    temp = a;
+    int C;
+    C = a;
     a = b;
-    b = temp;
+    b = C;
     return; 
 }
 int main(){
