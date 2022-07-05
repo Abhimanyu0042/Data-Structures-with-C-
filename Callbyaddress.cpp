@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-void swap(int *a, int *b){
-    int C;
-    C = *a;
-    *a = *b;
-    *b = C;
+void swap(int &a, int&b){
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
     return; 
 }
 int main(){
