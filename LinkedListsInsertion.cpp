@@ -4,68 +4,63 @@ using namespace std;
 class Node {
 public:
 	int data;
-	Node* next;
+	Node *next;
+Node(int data){
+    this->data = data;
+    this->next = NULL;
+}
 };
 
-void printList(Node* n)
+//Insert Node at Head
+void Insertathead(Node *&head,Node* &tail, int d){
+    if (head == NULL){
+        Node *temp = new Node(d);
+        head = temp;
+        tail = temp;
+    }
+    else{
+    Node* temp = new Node(d);
+    temp->next = head;
+    head = temp;
+    }
+}
+
+//Insert at tail
+void Insertattail(Node *&head,Node *&tail,int d){
+    if (tail == NULL){
+        Node *temp = new Node(d);
+        head = temp;
+        tail = temp;
+    }
+    else{
+    Node* temp = new Node(d);
+    tail->next = temp;
+    tail = temp;
+    }
+}
+
+void printList(Node *&head)
 {
-    while (n != NULL) {
-        cout << n->data << " ";
-        n = n->next;
-    }
-}
+    Node *temp = head; 
 
-void insertafter(Node* prev_node, int new_data){
-    if(prev_node = NULL){
-        cout<<"Node cannot be NULL";
-        return;
+    while (temp != NULL) {
+        cout << temp->data << " ";
+        temp = temp->next;
     }
-    cout<<"Enter the value you want to Enter : ";
-    cin>>new_data;
-    Node* new_node = new Node();
-    new_node->data = new_data;
-    new_node->next = prev_node->next;
-    prev_node->next = new_node;
+    cout<<endl;
 }
-
 
 int main()
 {
-	Node* head = NULL;
-	Node* second = NULL;
-	Node* third = NULL;
-    Node* fourth = NULL;
-    Node* fifth = NULL;
-
-
-	head = new Node();
-	second = new Node();
-	third = new Node();
-    fourth = new Node();
-    fifth = new Node();
-
-	head->data = 1; 
-	head->next = second; 
-
-	second->data = 2;
-	second->next = third;
-
-	third->data = 3;
-	third->next = fourth;
-
-    fourth->data = 4; 
-	fourth->next = fifth; 
-
-    fifth->data = 5; 
-	fifth->next = NULL; 
-
-    cout<<"List before insertion : ";
+    Node *head = NULL;
+    Node *tail = NULL;
+    cout<<"List before Insertion : ";
     printList(head);
-    
-    insertafter(second,8);
 
-    cout<<"List after insertion :";
+    Insertathead(head,tail,3);
+    cout<<"After Insertion at head : ";
     printList(head);
-	return 0;
+    cout<<"After Insertion at tail : ";
+    Insertattail(head,tail,5);
+    printList(head);
 }
-
