@@ -52,11 +52,11 @@ void printPreorder(struct Node* node)
   
 int main()
 {
-    struct Node* root = newNode(1);
-    root->left = newNode(2);
-    root->right = newNode(3);
-    root->left->left = newNode(4);
-    root->left->right = newNode(5);
+    struct Node* root = newNode(6);
+    root->left = newNode(3);
+    root->right = newNode(2);
+    root->left->left = newNode(5);
+    root->left->right = newNode(9);
   
     cout << "\nPreorder traversal of binary tree is \n";
     printPreorder(root);

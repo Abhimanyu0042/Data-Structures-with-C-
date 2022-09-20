@@ -42,9 +42,6 @@ void bubblesort(int arr[], int n)
             {
                 break;
             }
-            cout<<"Array after Sorting : "<<endl;
-            print_arr(arr,n);
-            cout<<endl;
     }
 }
 
@@ -57,6 +54,9 @@ int main()
     cout << "Enter the Elements in the Array: ";
     insert_arr(arr, n);
     bubblesort(arr, n);
+    cout<<"Array after Sorting : "<<endl;
+    print_arr(arr,n);
+    cout<<endl;
 
     return 0;
 }
